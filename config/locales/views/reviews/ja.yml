@@ -1,0 +1,8 @@
+ja:
+  reviews:
+    new:
+      title: レビュー登録
+    edit:
+      title: レビュー更新
+    show:
+      title: カスタマーレビュー
