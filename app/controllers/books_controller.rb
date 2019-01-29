@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   def index
-    @books = Book.page(params[:page]).per(4)
+    @books = Book.find_newest_books(params[:page])
   end
 
   def new
@@ -34,7 +34,7 @@ class BooksController < ApplicationController
 
   def destroy
     @book.destroy
-    redirect_to @books_path, notice: "書籍を削除しました。"
+    redirect_to books_path, notice: "書籍を削除しました。"
   end
 
   private
